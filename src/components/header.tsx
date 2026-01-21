@@ -19,7 +19,10 @@ const Header = () => {
 
   // 3. Mount check to prevent Hydration Mismatch
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
 
   const { scrollY } = useScroll();
 

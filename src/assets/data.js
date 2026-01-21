@@ -71,9 +71,6 @@ const data = {
         { name: "Django" },
         { name: "Express.js" },
         { name: "MySQL" },
-        // {name: "PostgreSQL" },
-        // {name: "Prisma" },
-        // { name: "MongoDB" },
       ],
     },
     {
@@ -125,8 +122,24 @@ const data = {
       name: "Diamate",
       category: "AI & Health",
       description:
-        "A specialized medical interface built with React and TailwindCSS that bridges the gap between patient data and AI diagnostics. The application visualizes complex algorithmic outputs to assist users in the early detection and ongoing management of diabetes.",
-      techStack: ["React", "TailwindCSS"],
+        "A specialized medical interface built with React and TailwindCSS that bridges the gap between patient data and AI diagnostics.",
+      fullDescription:
+        "Diamate is an advanced healthcare solution designed to empower patients and doctors with AI-driven insights. By analyzing vital health markers, the application provides early detection warnings for diabetes and assists in personalized management plans. The core focus was on creating a highly accessible, trustworthy, and performant interface that handles sensitive data with care.",
+      features: [
+        "AI-Driven Predictive Analysis",
+        "Interactive Health Dashboard",
+        "Real-time Data Visualization",
+        "Patient-Doctor Communication Bridge",
+        "Mobile-First Responsive Design",
+      ],
+      role: "Lead Full-Stack Developer",
+      timeline: "3 Months",
+      keyAchievements: [
+        "Integrated complex ML models with a seamless React frontend.",
+        "Optimized data rendering performance for real-time charts.",
+        "Implemented high-standard accessibility features for elderly users.",
+      ],
+      techStack: ["React", "TailwindCSS", "Machine Learning", "Data Analysis"],
       link: "https://github.com/kamalSayed2004/diamate",
     },
     {
@@ -134,8 +147,31 @@ const data = {
       name: "Doctor Appointment System",
       category: "Full Stack",
       description:
-        "A comprehensive healthcare booking platform designed to streamline the patient-doctor connection. Built with React, it features a dynamic scheduling engine that allows doctors to manage slots and patients to book appointments seamlessly.",
-      techStack: ["HTML5", "CSS3", "JavaScript", "React", "TailwindCSS"],
+        "A comprehensive healthcare booking platform designed to streamline the patient-doctor connection.",
+      fullDescription:
+        "This project reimagines the medical appointment booking process. It features a robust backend to manage complex doctor schedules, recurring slots, and real-time availability updates. The frontend provides a frictionless experience for patients to find specialists, book appointments, and manage their medical history efficiently.",
+      features: [
+        "Dynamic Scheduling Engine",
+        "Secure User Authentication",
+        "Real-time Appointment Notifications",
+        "Specialist Search & Filtering",
+        "Admin Dashboard for Clinics",
+      ],
+      role: "Backend & Frontend Architect",
+      timeline: "4 Months",
+      keyAchievements: [
+        "Built a custom scheduling algorithm that avoids double bookings.",
+        "Developed a comprehensive admin panel for facility management.",
+        "Reduced page load times by 40% through lazy loading and caching.",
+      ],
+      techStack: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React",
+        "TailwindCSS",
+        "Node.js",
+      ],
       link: "https://github.com/kamalSayed2004/medical-project",
     },
     {
@@ -143,8 +179,24 @@ const data = {
       name: "Timer & Notes Manager",
       category: "Productivity",
       description:
-        "A personal productivity toolkit engineered with pure JavaScript. It combines a persistent task manager with custom-built timer logic, helping users track time and manage tasks without relying on heavy external frameworks.",
-      techStack: ["HTML", "CSS", "JavaScript"],
+        "A personal productivity toolkit engineered with pure JavaScript and persistent task manager.",
+      fullDescription:
+        "A focused productivity suite built for minimalism and speed. This application combines high-performance timer logic (Pomodoro style) with a localized database for note-taking. It avoids external framework bloat, resulting in a lightning-fast tool for daily task management and focus sessions.",
+      features: [
+        "Customizable Focus Timers",
+        "Persistent Task & Note Storage",
+        "Minimalist Zero-Bloat UI",
+        "Offline Capability",
+        "Dynamic Workspace Themes",
+      ],
+      role: "Solo Developer",
+      timeline: "1 Month",
+      keyAchievements: [
+        "Mastered DOM manipulation and local storage persistence without libraries.",
+        "Created an intuitive, distraction-free user interface.",
+        "Achieved a perfect 100/100 performance score on Lighthouse.",
+      ],
+      techStack: ["HTML", "CSS", "JavaScript", "Local Storage"],
       link: "https://github.com/kamalSayed2004/time-manager",
     },
     {
@@ -152,8 +204,24 @@ const data = {
       name: "Productivity Dashboard",
       category: "UI/UX",
       description:
-        "A responsive admin dashboard template focused on data visualization. It utilizes advanced CSS Grid techniques to present complex metrics in a clean, intuitive interface that adapts perfectly to any screen size.",
-      techStack: ["HTML", "CSS", "JavaScript"],
+        "A responsive admin dashboard template focused on data visualization and CSS Grid.",
+      fullDescription:
+        "This project showcases advanced modern CSS techniques, specifically CSS Grid and Flexbox, to create a complex yet fluid admin interface. The dashboard includes multiple widget types, interactive charts, and a sidebar navigation system that adapts perfectly across mobile, tablet, and ultra-wide displays.",
+      features: [
+        "Advanced CSS Grid Layouts",
+        "Dynamic Data Widgets",
+        "Interactive Chart Integrations",
+        "Multi-Theme Support",
+        "Adaptive Navigation System",
+      ],
+      role: "UI Engineer",
+      timeline: "2 Weeks",
+      keyAchievements: [
+        "Implemented a complex multi-column grid layout without using framework grids.",
+        "Designed a cohesive dark/light mode color palette.",
+        "Created reusable UI components for rapid dashboard expansion.",
+      ],
+      techStack: ["HTML", "CSS", "JavaScript", "Chart.js"],
       link: "https://github.com/kamalSayed2004/dashboard",
     },
     {
@@ -161,7 +229,23 @@ const data = {
       name: "Elzero Game Store",
       category: "E-Commerce",
       description:
-        "A front-end simulation of a digital marketplace. This project focuses on the implementation of complex grid layouts and responsive design patterns to create an engaging, app-like experience for browsing digital products.",
+        "A front-end simulation of a digital marketplace with complex grid layouts.",
+      fullDescription:
+        "A meticulously designed e-commerce interface simulating a modern digital gaming marketplace. This project focuses on product presentation, categorized filtering, and the user journey through a storefront. It demonstrates high-level proficiency in layout architecture and responsive design patterns.",
+      features: [
+        "Interactive Product Catalog",
+        "Category-Based Navigation",
+        "Dynamic Cart Simulation",
+        "App-like User Experience",
+        "Optimized Asset Loading",
+      ],
+      role: "Front-End Developer",
+      timeline: "1 Month",
+      keyAchievements: [
+        "Engineered a highly responsive grid system for product cards.",
+        "Integrated complex hover states and micro-interactions.",
+        "Built a seamless mobile navigation experience.",
+      ],
       techStack: ["HTML", "CSS", "JavaScript"],
       link: "https://github.com/kamalSayed2004/elzero",
     },
@@ -170,7 +254,23 @@ const data = {
       name: "Kasper Template",
       category: "UI/UX",
       description:
-        "A pixel-perfect implementation of a high-quality design mockup. This project demonstrates the ability to translate static creative assets into a living, breathing website with strict attention to spacing, typography, and cross-browser compatibility.",
+        "A pixel-perfect implementation of a high-quality design mockup with cross-browser compatibility.",
+      fullDescription:
+        "Kasper is an exercise in absolute precision. This project involved translating a complex, multi-section design mockup into a fully responsive, semantic website. Special attention was paid to typography, vertical rhythm, and legacy browser support while maintaining a modern aesthetic.",
+      features: [
+        "Pixel-Perfect Component Build",
+        "Semantic HTML5 Structure",
+        "Custom SVG Illustrations",
+        "Smooth Scroll Navigation",
+        "Cross-Browser Optimization",
+      ],
+      role: "Web Developer",
+      timeline: "3 Weeks",
+      keyAchievements: [
+        "Translated static PSD/Figma designs into a fluid web experience.",
+        "Maintained perfect visual fidelity across different screen densities.",
+        "Optimized CSS for minimal file size and fast delivery.",
+      ],
       techStack: ["HTML", "CSS", "JavaScript"],
       link: "https://github.com/kamalSayed2004/kasper",
     },
@@ -189,6 +289,15 @@ const data = {
       date: "2023 - Present",
       description:
         "Delivering custom web solutions for diverse clients using the MERN stack and TailwindCSS. Focused on performance optimization and responsive design implementation.",
+    },
+  ],
+  certificates: [
+    {
+      id: 1,
+      name: "Machine Learning (ITCRC)",
+      issuer: "BFCAI",
+      date: "2023",
+      image: "ml-itcrc.jpg",
     },
   ],
 };

@@ -15,6 +15,7 @@ import {
   Linkedin,
   Facebook,
   FileText,
+  Award,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -49,6 +50,11 @@ const About = () => {
       label: "Technologies",
       value: `${totalTechnologies}+`,
       icon: Code,
+    },
+    {
+      label: "Certificates",
+      value: (data.certificates?.length || 0).toString(),
+      icon: Award,
     },
   ];
 

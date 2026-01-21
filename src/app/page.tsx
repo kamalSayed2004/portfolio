@@ -1,5 +1,6 @@
 import Landscape from "@/components/landscape";
 import About from "@/components/about";
+import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Landscape />
       <About />
       <Skills />
+      <Projects />
     </main>
   );
 }
