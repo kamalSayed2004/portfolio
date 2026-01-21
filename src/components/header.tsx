@@ -67,7 +67,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <motion.a
           variants={itemVariants}
-          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 cursor-pointer"
+          className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           href="/"
