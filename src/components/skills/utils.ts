@@ -1,3 +1,4 @@
+import { Variants, TargetAndTransition } from "framer-motion";
 import {
   Code,
   Database,
@@ -18,7 +19,7 @@ export const ICON_MAP: { [key: string]: React.ElementType } = {
   Users,
 };
 
-export const containerVariants = {
+export const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -29,7 +30,7 @@ export const containerVariants = {
   },
 };
 
-export const cardVariants = {
+export const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50, scale: 0.95 },
   visible: {
     opacity: 1,
@@ -42,7 +43,7 @@ export const cardVariants = {
   },
 };
 
-export const skillVariants = {
+export const skillVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8, y: 10 },
   visible: {
     opacity: 1,
@@ -55,7 +56,7 @@ export const skillVariants = {
   },
 };
 
-export const floatingAnimation = {
+export const floatingAnimation: TargetAndTransition = {
   y: [0, -10, 0],
   transition: {
     duration: 3,
@@ -64,7 +65,7 @@ export const floatingAnimation = {
   },
 };
 
-export const glowAnimation = {
+export const glowAnimation: TargetAndTransition = {
   boxShadow: [
     "0 0 20px rgba(139, 92, 246, 0.3)",
     "0 0 40px rgba(139, 92, 246, 0.5)",
@@ -76,15 +77,3 @@ export const glowAnimation = {
     ease: "easeInOut",
   },
 };
-
-export interface SkillItem {
-  name: string;
-}
-
-export interface SkillCategory {
-  type: string;
-  icon: string;
-  color: string;
-  subtitle: string;
-  list: SkillItem[];
-}

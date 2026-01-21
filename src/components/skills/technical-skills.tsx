@@ -3,8 +3,8 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
 import { Code, TrendingUp } from "lucide-react";
+import { SkillCategory } from "@/assets/data";
 import {
-  SkillCategory,
   ICON_MAP,
   containerVariants,
   cardVariants,

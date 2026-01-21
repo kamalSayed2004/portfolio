@@ -3,7 +3,7 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
 import { Globe, Languages } from "lucide-react";
-import { SkillCategory } from "./utils";
+import { SkillCategory } from "@/assets/data";
 
 const LanguagesSkills = memo(
   ({ skills }: { skills: SkillCategory | undefined }) => {

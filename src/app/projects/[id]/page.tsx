@@ -17,7 +17,7 @@ import {
   User,
   ChevronRight,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import data from "@/assets/data";
 
 interface ProjectPageProps {
@@ -51,7 +51,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     (_, i) => `/projects/${project.id}/${i + 1}.png`,
   );
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -59,7 +59,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -377,8 +377,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </h2>
           <p className="text-xl text-gray-500 dark:text-gray-400 font-medium mb-16 max-w-2xl mx-auto">
             If you find this project interesting or have ideas for improvement,
-            I'm always open to discussing new technical challenges and creative
-            collaborations.
+            I&apos;m always open to discussing new technical challenges and
+            creative collaborations.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -395,7 +395,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               href="/#contact"
               className="w-full sm:w-auto px-12 py-6 bg-white dark:bg-gray-900 border-2 border-gray-100 dark:border-gray-800 rounded-[24px] font-black text-xl hover:border-blue-500 transition-all active:scale-95 flex items-center justify-center gap-3"
             >
-              LET'S TALK
+              LET&apos;S TALK
               <ChevronRight className="w-6 h-6" />
             </Link>
           </div>

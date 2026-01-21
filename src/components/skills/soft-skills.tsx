@@ -3,7 +3,7 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
 import { Users } from "lucide-react";
-import { SkillCategory } from "./utils";
+import { SkillCategory } from "@/assets/data";
 
 const SoftSkills = memo(({ skills }: { skills: SkillCategory | undefined }) => {
   if (!skills) return null;
