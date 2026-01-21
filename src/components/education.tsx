@@ -5,6 +5,7 @@ import { motion, Variants, AnimatePresence } from "framer-motion";
 import { GraduationCap, Award, X, ZoomIn, Download } from "lucide-react";
 import Image from "next/image";
 import data, { Certificate } from "@/assets/data";
+import { withBasePath } from "@/utils/paths";
 
 // --- Variants ---
 
@@ -135,7 +136,7 @@ const Education = () => {
   const handleDownload = (e: React.MouseEvent, url: string) => {
     e.stopPropagation();
     const link = document.createElement("a");
-    link.href = url;
+    link.href = withBasePath(url);
     link.download = url.split("/").pop() || "certificate";
     document.body.appendChild(link);
     link.click();
