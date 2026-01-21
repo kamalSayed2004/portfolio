@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import "./global.css";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import { ThemeProvider } from "../contexts/toggleTheme";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -12,10 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        <header></header>
-        {children}
-        <footer></footer>
+      <body className="bg-white text-black dark:bg-black dark:text-white">
+        <ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
