@@ -9,11 +9,11 @@ const Footer = () => {
   // Map data.js icon names to Lucide components
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case "FaGithub":
+      case "Github":
         return <Github className="w-5 h-5" />;
-      case "FaLinkedin":
+      case "Linkedin":
         return <Linkedin className="w-5 h-5" />;
-      case "FaFacebook":
+      case "Facebook":
         return <Facebook className="w-5 h-5" />;
       default:
         return <Github className="w-5 h-5" />;

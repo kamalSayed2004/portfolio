@@ -1,5 +1,11 @@
+import Landscape from "@/components/landscape";
+import About from "@/components/about";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center font-sans"></div>
+    <main className="min-h-screen">
+      <Landscape />
+      <About />
+    </main>
   );
 }

@@ -5,34 +5,29 @@ const data = {
   email: "kk1412ec4869@gmail.com",
   address: "Al-Qalyubia, Khanka, Egypt",
   phones: ["+20 100 362 0544", "+20 100 582 6130"],
-
-  // Professional Summary
   summary: [
     "Detail-oriented Full-Stack Developer and AI Engineer with a passion for building scalable, efficient web applications. I thrive in collaborative environments and am accustomed to meeting tight deadlines without compromising quality.",
-    "I possess hands-on experience bridging the gap between modern front-end interfaces (React, TailwindCSS) and robust back-end logic (Python, Node.js, MySQL).",
     "Currently focused on integrating Artificial Intelligence solutions into web architecture to create innovative, data-driven user experiences.",
   ],
-  // external assets
-  cv: "https://drive.google.com/file/d/16YywcCjVuq8rWkK0T1E-YNspzUNSIDAg/view?usp=sharing",
-  // Social Media
+  cv: "https://drive.google.com/file/d/1rEWWWOssHwp2lPEMDP3xAAVLtbBpPgWy/view?usp=sharing",
   socialMedia: [
     {
       id: 1,
       name: "LinkedIn",
       link: "https://www.linkedin.com/in/kamal-sayed-82ba2b335/",
-      icon: "FaLinkedin",
+      icon: "Linkedin",
     },
     {
       id: 2,
       name: "GitHub",
       link: "https://github.com/kamalSayed2004",
-      icon: "FaGithub",
+      icon: "Github",
     },
     {
       id: 3,
       name: "Facebook",
       link: "https://www.facebook.com/kamalsayedkamal2004/",
-      icon: "FaFacebook",
+      icon: "Facebook",
     },
   ],
   skills: [
@@ -194,20 +189,6 @@ const data = {
       date: "2023 - Present",
       description:
         "Delivering custom web solutions for diverse clients using the MERN stack and TailwindCSS. Focused on performance optimization and responsive design implementation.",
-    },
-  ],
-  certificates: [
-    {
-      link: "",
-      degree: "Bachelor of Computer Science",
-      institution: "BFCAI",
-      status: "In Progress",
-    },
-    {
-      link: "https://drive.google.com/file/d/1CggFZVRjEoPlUmwM68JbPOfZHfxGZpv4/view?usp=sharing",
-      degree: "Machine Learning Certification",
-      institution: "BFCAI",
-      status: "Completed",
     },
   ],
 };
