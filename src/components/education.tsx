@@ -5,7 +5,6 @@ import { motion, Variants, AnimatePresence } from "framer-motion";
 import { GraduationCap, Award, X, ZoomIn, Download } from "lucide-react";
 import Image from "next/image";
 import data, { Certificate } from "@/assets/data";
-import { withBasePath } from "@/utils/paths";
 
 // --- Variants ---
 
@@ -136,7 +135,7 @@ const Education = () => {
   const handleDownload = (e: React.MouseEvent, url: string) => {
     e.stopPropagation();
     const link = document.createElement("a");
-    link.href = withBasePath(url);
+    link.href = url;
     link.download = url.split("/").pop() || "certificate";
     document.body.appendChild(link);
     link.click();
@@ -239,7 +238,7 @@ const Education = () => {
               {/* Image Container */}
               <div className="relative aspect-4/3 sm:aspect-video w-full bg-gray-50 dark:bg-gray-950 overflow-hidden">
                 <Image
-                  src={withBasePath(selectedCert.image)}
+                  src={selectedCert.image}
                   alt={selectedCert.degree}
                   fill
                   className="object-contain p-4"

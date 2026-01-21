@@ -14,7 +14,6 @@ import {
   Quote,
 } from "lucide-react";
 import data from "@/assets/data";
-import { withBasePath } from "@/utils/paths";
 
 const Projects = () => {
   const [width, setWidth] = useState(0);
@@ -160,7 +159,7 @@ const Projects = () => {
                     {/* Top: Image Section */}
                     <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-6 shadow-inner shrink-0">
                       <Image
-                        src={withBasePath(`/projects/${project.id}/1.png`)}
+                        src={`/projects/${project.id}/1.png`}
                         alt={project.name}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
