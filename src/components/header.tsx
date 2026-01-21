@@ -1,21 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
-import { useTheme } from "@/contexts/themeContext";
+import React, { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import {
   motion,
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
+  Variants,
 } from "framer-motion";
 
 const Header = () => {
-  const { theme, toggleTheme } = useTheme();
+  // 2. Destructure setTheme and resolvedTheme (for accurate system toggle)
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Track scroll for compacting effect
+  // 3. Mount check to prevent Hydration Mismatch
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -30,47 +35,39 @@ const Header = () => {
     { name: "Education", hash: "#education" },
   ];
 
-  // Animation Variants
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 },
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 20 } as any,
+      transition: { type: "spring", stiffness: 100, damping: 20 },
     },
   };
 
   return (
     <motion.header
-      className={`fixed top-0 left-0 right-0 z-100 bg-white dark:bg-black border-b transition-all duration-500 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black border-b transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "border-gray-200 dark:border-gray-800 shadow-sm"
-          : "border-transparent"
+          ? "border-gray-200 dark:border-gray-800 shadow-sm py-3"
+          : "border-transparent py-6"
       }`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
-      <div
-        className={`max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center transition-all duration-500 ease-in-out ${
-          isScrolled ? "py-3" : "py-6"
-        }`}
-      >
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <motion.a
           variants={itemVariants}
-          className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 cursor-pointer"
+          className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 cursor-pointer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           href="/"
@@ -117,19 +114,29 @@ const Header = () => {
         <motion.div variants={itemVariants} className="flex items-center gap-4">
           {/* Theme Toggle */}
           <motion.button
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
+            // 4. Use setTheme with resolvedTheme logic
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-1 focus:ring-blue-500"
             whileHover={{ rotate: 15, scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Toggle Theme"
           >
-            <motion.div
-              initial={false}
-              animate={{ rotate: theme === "dark" ? 0 : 180 }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
-            >
-              {theme === "dark" ? "☀️" : "🌙"}
-            </motion.div>
+            {/* 5. Render nothing until mounted to prevent hydration mismatch */}
+            {mounted ? (
+              <motion.div
+                key={theme} // Key change triggers animation
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {resolvedTheme === "dark" ? "☀️" : "🌙"}
+              </motion.div>
+            ) : (
+              <div className="w-6 h-6" /> // Placeholder to prevent layout shift
+            )}
           </motion.button>
 
           {/* Mobile Hamburger Toggle */}
@@ -169,7 +176,9 @@ const Header = () => {
             animate={{ height: "100vh", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
-            className="md:hidden fixed top-[72px] left-0 right-0 bottom-0 bg-white dark:bg-black z-50 overflow-hidden"
+            // 6. Changed to "absolute top-full" so it attaches perfectly to the bottom of the header
+            className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-black border-t dark:border-gray-800 overflow-hidden"
+            style={{ height: "calc(100vh - 100%)" }}
           >
             <ul className="flex flex-col items-center justify-center h-full gap-8 pb-32">
               {links.map((link, i) => (
