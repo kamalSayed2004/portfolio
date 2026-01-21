@@ -239,7 +239,7 @@ const Education = () => {
               {/* Image Container */}
               <div className="relative aspect-4/3 sm:aspect-video w-full bg-gray-50 dark:bg-gray-950 overflow-hidden">
                 <Image
-                  src={selectedCert.image}
+                  src={withBasePath(selectedCert.image)}
                   alt={selectedCert.degree}
                   fill
                   className="object-contain p-4"

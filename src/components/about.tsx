@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import data from "@/assets/data";
+import { withBasePath } from "@/utils/paths";
 
 import {
   Mail,
@@ -75,7 +76,7 @@ const About = () => {
           <div className="w-full lg:w-5/12 relative group">
             <div className="relative aspect-square w-full max-w-md mx-auto overflow-hidden rounded-2xl shadow-xl z-10 border-4 border-white dark:border-gray-800">
               <Image
-                src="/imgs/portfolioImg.jpg"
+                src={withBasePath("/imgs/portfolioImg.jpg")}
                 alt={data.name}
                 fill
                 className="object-cover object-top transition-transform duration-500 group-hover:scale-110"

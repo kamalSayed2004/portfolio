@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import data from "../assets/data";
+import { withBasePath } from "@/utils/paths";
 
 const Landscape = () => {
   return (
@@ -8,7 +9,7 @@ const Landscape = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/imgs/landscapeImg.jpeg"
+          src={withBasePath("/imgs/landscapeImg.jpeg")}
           alt="Landscape Background"
           fill
           priority

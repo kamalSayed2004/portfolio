@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { Project } from "@/assets/data";
+import { withBasePath } from "@/utils/paths";
 
 interface ProjectClientProps {
   project: Project;
@@ -26,9 +27,8 @@ interface ProjectClientProps {
 
 export default function ProjectClient({ project }: ProjectClientProps) {
   const imageCount = 10;
-  const projectImages = Array.from(
-    { length: imageCount },
-    (_, i) => `/projects/${project.id}/${i + 1}.png`,
+  const projectImages = Array.from({ length: imageCount }, (_, i) =>
+    withBasePath(`/projects/${project.id}/${i + 1}.png`),
   );
 
   const containerVariants: Variants = {
